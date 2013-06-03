@@ -1,0 +1,89 @@
+::-webkit-scrollbar{width:7px;height:7px;}
+::-webkit-scrollbar-track{background-color:rgba(0,0,0,0.0);}
+::-webkit-scrollbar-track:hover{background-color:rgba(0,0,0,0.05);}
+::-webkit-scrollbar-thumb{background-color:rgba(0,120,184,0.4);}
+::-webkit-scrollbar-thumb:hover{background-color:rgba(0,120,184,0.7);}
+
+body {
+    padding-top: 70px;
+    padding-bottom: 40px;
+  }
+  .sidebar-nav {
+    padding: 9px 0;
+  }
+
+hr {
+  margin: 18px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #ffffff;
+}
+
+.hBig{
+    font-size:22px;
+    color:rgba(0,120,184,1);
+    font-weight:lighter;
+}
+
+.hBig small{
+    font-size:18px;
+    color:rgba(0,0,0,0.4);
+}
+
+.brand
+{
+  background: url('../img/esb-logo.png') no-repeat center center;
+  height: 40px;
+  width: 200px;
+}
+.navbar2
+{
+  position: absolute;
+  height: auto;
+}
+
+.brand-ico
+{
+  background: url('../img/esb-icon.png') no-repeat center center;
+  height: 40px;
+  width: 40px;
+}
+
+.footer {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	width: 48px;
+	height: 48px;
+	text-align: right;
+	background: url('../img/esb-icon-fade.png') no-repeat bottom right;
+}
+
+
+.modal-body .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 200px;
+  margin: 20px;
+}
+
+.modal-auth {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin: 0 auto 20px;
+  z-index: 1;
+  max-width: 95%;
+}
+
+.app-icon {
+  background: url('../img/esb-app-icon.png') no-repeat center center;
+  height: 114px;
+  width: 114px;
+  float: right;
+  margin: 0px 20px;
+  z-index: 1;
+  text-align: center;
+}
+
