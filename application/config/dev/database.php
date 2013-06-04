@@ -66,13 +66,12 @@ return array(
 			'database' => 'application',
 			'prefix'   => '',
 		),
-
 		'mysql' => array(
 			'driver'   => 'mysql',
-			'host'     => 'owl.tamucc.edu',
+			'host'     => 'localhost',
 			'database' => 'SE_gobiidae_db',
-			'username' => 'gobiidae_db',
-			'password' => '4YbrBLwSpbExwyyz',
+			'username' => 'root',
+			'password' => 'admin',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),

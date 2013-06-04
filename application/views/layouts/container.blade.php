@@ -95,7 +95,10 @@
             <ul class="nav nav-pills">
                @section('navigation')
                 
-                 <?php  echo Navbar::create()
+                 <?php
+                   if($profile->fullaccess)
+                   {
+                        echo Navbar::create()
 						           ->with_brand('CMS Backoffice', '#')
 						           ->with_menus( Navigation::links(
 						                        array(
@@ -120,6 +123,47 @@
 						                            )
 						                         )
 						                   );
+                     }
+                     else if($profile->accesscontrol)
+                     {
+                     	echo Navbar::create()
+						           ->with_brand('CMS Backoffice', '#')
+						           ->with_menus( Navigation::links(
+						                        array(
+						                             array(Lang::line('lbl_menu.home')->get($lang), URL::to('backoffice/app/home'), true),
+						                           
+												      array(Lang::line('lbl_menu.user_mgnt')->get($lang), '#', false, false,
+												           array(
+												               array(Navigation::HEADER, Lang::line('lbl_menu.administration')->get($lang)),
+												               array(Navigation::DIVIDER),
+												               array(Lang::line('lbl_menu.roles')->get($lang), URL::to('backoffice/account/list_roles')),
+												               array(Lang::line('lbl_menu.accounts')->get($lang), URL::to('backoffice/account/list')),
+												               )
+												          ),												                 
+						                            )
+						                         )
+						                   );
+                     }	
+                     else if($profile->contenteditable)
+                     {
+                        echo Navbar::create()
+						           ->with_brand('CMS Backoffice', '#')
+						           ->with_menus( Navigation::links(
+						                        array(
+						                             array(Lang::line('lbl_menu.home')->get($lang), URL::to('backoffice/app/home'), true),
+												          
+												     array(Lang::line('lbl_menu.contributors')->get($lang), URL::to('backoffice/contributor/list')),
+				
+												     array(Lang::line('lbl_menu.taxonomic')->get($lang), URL::to('backoffice/taxonomic/list')),
+												    
+												     array(Lang::line('lbl_menu.definitions')->get($lang), URL::to('backoffice/definition/list')),
+												                 
+						                            )
+						                         )
+						                   );
+                     	
+                     }
+                                       
 					?>
                @yield_section
                 

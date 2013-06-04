@@ -47,7 +47,7 @@
 	  							      <table border="0" width="100%">
 									      <tr>
 									        <td>
-									            <div class="fileupload-preview thumbnail" style="width: 250px; height: 190px;">
+									            <div class="fileupload-preview thumbnail" style="width: 250px; height: 350px;">
 									                 <img width="250px" height="190px" src="<?php echo URL::to_asset('uploads/images/contributors/'.$contributor->photo) ?>" />
 									            </div>
 									        </td>

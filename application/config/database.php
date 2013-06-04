@@ -69,10 +69,10 @@ return array(
 
 		'mysql' => array(
 			'driver'   => 'mysql',
-			'host'     => 'localhost',
+			'host'     => 'owl.tamucc.edu',
 			'database' => 'SE_gobiidae_db',
-			'username' => 'root',
-			'password' => 'admin',
+			'username' => 'gobiidae_db',
+			'password' => '4YbrBLwSpbExwyyz',
 			'charset'  => 'utf8',
 			'prefix'   => '',
 		),
