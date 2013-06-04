@@ -342,7 +342,9 @@ class Backoffice_Taxonomic_Controller extends Base_Controller {
 		$taxonImage->speciepageimage = (isset($displayOnSpecie)) ? $displayOnSpecie : 0;
 		$taxonImage->genuspageimage  = (isset($displayOnGenus)) ? $displayOnGenus : 0;
 
-		$setPicture = $this->uploadImage($image, $filename, '');
+		$destination = (Taxon::find($taxonid)->taxontype=="S") ? "species" : "taxons";
+		
+		$setPicture = $this->uploadImage($image, $filename, $destination, '');
 	        
 		if( $setPicture )
 		 {
@@ -391,7 +393,7 @@ class Backoffice_Taxonomic_Controller extends Base_Controller {
 	}
 	
 	
-   public function uploadImage($image, $filename, $current_action)
+   public function uploadImage($image, $filename, $dest, $current_action)
 	{
 	    $success = false;
 	    
@@ -410,7 +412,7 @@ class Backoffice_Taxonomic_Controller extends Base_Controller {
 		 {
 
 		  //Check if a file already exists before uploading.
-		  if(File::exists('public/uploads/images/taxons/'.$filename))
+		  if(File::exists('public/uploads/images/'.$dest.'/'.$filename))
 		  {
 		  	$success = false;
 		  	Log::info('ERROR: File already exists...'.$filename);
@@ -420,7 +422,7 @@ class Backoffice_Taxonomic_Controller extends Base_Controller {
 		  }
 		  
 		  //Upload the file
-		  $img_upload = Input::upload('image', 'public/uploads/images/taxons', $filename);
+		  $img_upload = Input::upload('image', 'public/uploads/images/'.$dest, $filename);
 		  if($img_upload === false)
 		  {
 		  	 $success =  false;

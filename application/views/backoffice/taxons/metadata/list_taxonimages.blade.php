@@ -106,7 +106,7 @@
 									    <table border="0" width="100%">
 									      <tr>
 									        <td>
-									              <div class="fileupload-preview thumbnail" style="width: 250px; height: 180px;">
+									              <div class="fileupload-preview thumbnail" style="width: 250px; height: 350px;">
 									                 <img src="<?php echo URL::to_asset('uploads/images/'.$folder.'/'.$image->imagename) ?>" />
 									              </div>
 									        </td>
